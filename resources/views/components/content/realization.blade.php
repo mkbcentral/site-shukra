@@ -22,7 +22,7 @@
                 style="height: 400px;">
                 <!-- Slide 1 -->
                 <div class="carousel-slide active relative">
-                    <img src="/intervention_chirurgicale.png" alt="Intervention Chirurgicale"
+                    <img src="{{ asset('intervention_chirurgicale.png') }}" alt="Intervention Chirurgicale"
                         class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent">
                         <div class="absolute bottom-8 left-8 text-white">
@@ -35,7 +35,8 @@
 
                 <!-- Slide 2 -->
                 <div class="carousel-slide relative">
-                    <img src="/intervention_2.png" alt="Chirurgie Laparoscopique" class="w-full h-full object-cover">
+                    <img src="{{ asset('intervention_2.png') }}" alt="Chirurgie Laparoscopique"
+                        class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent">
                         <div class="absolute bottom-8 left-8 text-white">
                             <h3 class="text-2xl font-bold mb-2">Chirurgie Laparoscopique</h3>
@@ -47,7 +48,8 @@
 
                 <!-- Slide 3 -->
                 <div class="carousel-slide relative">
-                    <img src="/intervention_3.png" alt="Chirurgie d'Urgence" class="w-full h-full object-cover">
+                    <img src="{{ asset('intervention_3.png') }}" alt="Chirurgie d'Urgence"
+                        class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent">
                         <div class="absolute bottom-8 left-8 text-white">
                             <h3 class="text-2xl font-bold mb-2">Chirurgie d'Urgence</h3>
@@ -59,7 +61,8 @@
 
                 <!-- Slide 4 -->
                 <div class="carousel-slide relative">
-                    <img src="/intervention_4.png" alt="Chirurgie Cardiaque" class="w-full h-full object-cover">
+                    <img src="{{ asset('intervention_4.png') }}" alt="Chirurgie Cardiaque"
+                        class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent">
                         <div class="absolute bottom-8 left-8 text-white">
                             <h3 class="text-2xl font-bold mb-2">Chirurgie Cardiaque</h3>

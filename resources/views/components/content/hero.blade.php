@@ -4,11 +4,13 @@
     <div class="absolute inset-0 hero-bg-opacity">
         <div id="hero-bg-carousel" class="relative w-full h-full">
             <div class="hero-bg-slide active absolute inset-0 opacity-100 transition-opacity duration-2000">
-                <img src="/cabinet_consultation.png" alt="" class="w-full h-full object-cover hero-bg-scale"
+                <img src="{{ asset('intervention_2.png') }}" alt=""
+                    class="w-full h-full object-cover hero-bg-scale"
                     style="/* @tweakable hero background image styling - removes border and ensures transparent background */ filter: brightness(1.1) contrast(1.05); border: none; outline: none; background: transparent;">
             </div>
             <div class="hero-bg-slide absolute inset-0 opacity-0 transition-opacity duration-2000">
-                <img src="/salle_attente.png" alt="" class="w-full h-full object-cover hero-bg-scale"
+                <img src="{{ asset('intervention_3.png') }}" alt=""
+                    class="w-full h-full object-cover hero-bg-scale"
                     style="/* @tweakable hero background image styling - removes border and ensures transparent background */ filter: brightness(1.1) contrast(1.05); border: none; outline: none; background: transparent;">
             </div>
             <div class="hero-bg-slide absolute inset-0 opacity-0 transition-opacity duration-2000">
@@ -21,11 +23,13 @@
                 </video>
             </div>
             <div class="hero-bg-slide absolute inset-0 opacity-0 transition-opacity duration-2000">
-                <img src="/laboratoire.png" alt="" class="w-full h-full object-cover hero-bg-scale"
+                <img src="{{ asset('intervention_4.png') }}" alt=""
+                    class="w-full h-full object-cover hero-bg-scale"
                     style="/* @tweakable hero background image styling - removes border and ensures transparent background */ filter: brightness(1.1) contrast(1.05); border: none; outline: none; background: transparent;">
             </div>
             <div class="hero-bg-slide absolute inset-0 opacity-0 transition-opacity duration-2000">
-                <img src="/salle_urgence.png" alt="" class="w-full h-full object-cover hero-bg-scale"
+                <img src="{{ asset('salle_urgence.png') }}" alt=""
+                    class="w-full h-full object-cover hero-bg-scale"
                     style="/* @tweakable hero background image styling - removes border and ensures transparent background */ filter: brightness(1.1) contrast(1.05); border: none; outline: none; background: transparent;">
             </div>
         </div>

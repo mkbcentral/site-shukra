@@ -49,9 +49,9 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Gallery Item 1 -->
                 <div class="gallery-item consultation cursor-pointer group relative overflow-hidden rounded-2xl"
-                    data-image="/cabinet_consultation.png" data-title="Cabinet de Consultation"
+                    data-image="{{ asset('intervention_2.png') }}" data-title="Cabinet de Consultation"
                     data-description="Espaces de consultation modernes et confortables pour nos patients">
-                    <img src="/cabinet_consultation.png" alt="Cabinet de Consultation"
+                    <img src="{{ asset('intervention_2.png') }}" alt="Cabinet de Consultation"
                         class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
                     <div
                         class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -64,9 +64,9 @@
 
                 <!-- Gallery Item 2 -->
                 <div class="gallery-item laboratoire cursor-pointer group relative overflow-hidden rounded-2xl"
-                    data-image="/laboratoire.png" data-title="Laboratoire Médical"
+                    data-image="{{ asset('intervention_4.png') }}" data-title="Laboratoire Médical"
                     data-description="Laboratoire équipé de technologies de pointe pour analyses précises">
-                    <img src="/laboratoire.png" alt="Laboratoire"
+                    <img src="{{ asset('intervention_4.png') }}" alt="Laboratoire"
                         class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
                     <div
                         class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -79,9 +79,9 @@
 
                 <!-- Gallery Item 3 -->
                 <div class="gallery-item urgence cursor-pointer group relative overflow-hidden rounded-2xl"
-                    data-image="/salle_urgence.png" data-title="Salle d'Urgence"
+                    data-image="{{ asset('intervention_3.png') }}" data-title="Salle d'Urgence"
                     data-description="Service d'urgence équipé pour interventions rapides et efficaces">
-                    <img src="/salle_urgence.png" alt="Salle d'Urgence"
+                    <img src="{{ asset('intervention_3.png') }}" alt="Salle d'Urgence"
                         class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
                     <div
                         class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -94,9 +94,9 @@
 
                 <!-- Gallery Item 4 -->
                 <div class="gallery-item consultation cursor-pointer group relative overflow-hidden rounded-2xl"
-                    data-image="/salle_attente.png" data-title="Salle d'Attente"
+                    data-image="{{ asset('intervention_4.png') }}" data-title="Salle d'Attente"
                     data-description="Espaces d'attente confortables et accueillants pour nos patients">
-                    <img src="/salle_attente.png" alt="Salle d'Attente"
+                    <img src="{{ asset('intervention_4.png') }}" alt="Salle d'Attente"
                         class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
                     <div
                         class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -109,9 +109,9 @@
 
                 <!-- Gallery Item 5 -->
                 <div class="gallery-item chirurgie cursor-pointer group relative overflow-hidden rounded-2xl"
-                    data-image="/intervention_chirurgicale.png" data-title="Bloc Opératoire"
+                    data-image="{{ asset('intervention_chirurgicale.png') }}" data-title="Bloc Opératoire"
                     data-description="Blocs opératoires modernes avec équipements chirurgicaux de pointe">
-                    <img src="/intervention_chirurgicale.png" alt="Bloc Opératoire"
+                    <img src="{{ asset('intervention_chirurgicale.png') }}" alt="Bloc Opératoire"
                         class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
                     <div
                         class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -124,9 +124,9 @@
 
                 <!-- Gallery Item 6 -->
                 <div class="gallery-item chirurgie cursor-pointer group relative overflow-hidden rounded-2xl"
-                    data-image="/intervention_2.png" data-title="Chirurgie Laparoscopique"
+                    data-image="{{ asset('intervention_2.png') }}" data-title="Chirurgie Laparoscopique"
                     data-description="Chirurgie minimalement invasive avec techniques avancées">
-                    <img src="/intervention_2.png" alt="Chirurgie Laparoscopique"
+                    <img src="{{ asset('intervention_2.png') }}" alt="Chirurgie Laparoscopique"
                         class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
                     <div
                         class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
