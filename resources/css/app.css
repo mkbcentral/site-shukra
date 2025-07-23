@@ -1,0 +1,1227 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+/* Medical Theme Variables and Custom Styles */
+:root {
+    /* @tweakable primary medical teal color */
+    --medical-teal: #0D9488;
+
+    /* @tweakable primary medical red color */
+    --medical-red: #DC2626;
+
+    /* @tweakable background gradient colors */
+    --gradient-from: #0D9488;
+    --gradient-to: #06B6D4;
+
+    /* @tweakable animation durations */
+    --animation-fast: 0.3s;
+    --animation-medium: 0.8s;
+    --animation-slow: 3s;
+
+    /* @tweakable shadow colors and opacity */
+    --shadow-teal-opacity: 0.1;
+    --shadow-teal-light-opacity: 0.04;
+
+    /* @tweakable backdrop blur amount */
+    --backdrop-blur: 10px;
+
+    /* @tweakable Font Awesome icon sizes */
+    --icon-size-small: 0.875rem;
+    /* 14px */
+    --icon-size-medium: 1.25rem;
+    /* 20px */
+    --icon-size-large: 1.5rem;
+    /* 24px */
+    --icon-size-xl: 2rem;
+    /* 32px */
+
+    /* @tweakable Font Awesome icon animation durations */
+    --icon-hover-duration: 0.3s;
+    --icon-scale-factor: 1.1;
+}
+
+/* Font Awesome Icon Size Classes */
+.fa-icon-sm {
+    font-size: var(--icon-size-small);
+}
+
+.fa-icon-md {
+    font-size: var(--icon-size-medium);
+}
+
+.fa-icon-lg {
+    font-size: var(--icon-size-large);
+}
+
+.fa-icon-xl {
+    font-size: var(--icon-size-xl);
+}
+
+/* Font Awesome Icon Hover Effects */
+.fa-hover-scale {
+    transition: transform var(--icon-hover-duration) ease;
+}
+
+.fa-hover-scale:hover {
+    transform: scale(var(--icon-scale-factor));
+}
+
+/* Font Awesome Icon Color Variations */
+.fa-medical-teal {
+    color: var(--medical-teal);
+}
+
+.fa-medical-red {
+    color: var(--medical-red);
+}
+
+/* Custom Font Awesome animations */
+@keyframes fa-pulse-custom {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.fa-pulse-custom {
+    animation: fa-pulse-custom 2s infinite;
+}
+
+@keyframes fa-bounce-custom {
+
+    0%,
+    20%,
+    53%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40%,
+    43% {
+        transform: translateY(-8px);
+    }
+
+    70% {
+        transform: translateY(-4px);
+    }
+
+    90% {
+        transform: translateY(-2px);
+    }
+}
+
+.fa-bounce-custom {
+    animation: fa-bounce-custom 1s infinite;
+}
+
+/* Glass Effect */
+.glass-effect {
+    backdrop-filter: blur(var(--backdrop-blur));
+    -webkit-backdrop-filter: blur(var(--backdrop-blur));
+}
+
+/* Hover Lift Effect */
+.hover-lift {
+    transition: transform var(--animation-fast) cubic-bezier(0.4, 0, 0.2, 1),
+        box-shadow var(--animation-fast) cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Gradient Text */
+.gradient-text {
+    background: linear-gradient(135deg, var(--gradient-from), var(--gradient-to));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Medical Shadow */
+.medical-shadow {
+    box-shadow: 0 20px 25px -5px rgba(13, 148, 136, var(--shadow-teal-opacity)),
+        0 10px 10px -5px rgba(13, 148, 136, var(--shadow-teal-light-opacity));
+}
+
+/* Loading Shimmer */
+.loading-shimmer {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Scroll Progress Indicator */
+.scroll-indicator {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gradient-from), var(--gradient-to));
+    transform-origin: left;
+    transform: scaleX(0);
+    z-index: 1000;
+    transition: transform 0.1s ease-out;
+}
+
+/* Custom Animations */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Animation Classes */
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+    animation: pulse var(--animation-slow) ease-in-out infinite;
+}
+
+.animate-bounce-slow {
+    animation: bounce var(--animation-slow) ease-in-out infinite;
+}
+
+.animate-fade-in {
+    animation: fadeIn var(--animation-medium) ease-out;
+}
+
+.animate-slide-up {
+    animation: slideUp var(--animation-medium) ease-out;
+}
+
+.animate-slide-in-left {
+    animation: slideInLeft var(--animation-medium) ease-out;
+}
+
+.animate-slide-in-right {
+    animation: slideInRight var(--animation-medium) ease-out;
+}
+
+/* Medical Colors for Tailwind */
+.text-medical-teal {
+    color: var(--medical-teal);
+}
+
+.bg-medical-teal {
+    background-color: var(--medical-teal);
+}
+
+.border-medical-teal {
+    border-color: var(--medical-teal);
+}
+
+.text-medical-red {
+    color: var(--medical-red);
+}
+
+.bg-medical-red {
+    background-color: var(--medical-red);
+}
+
+.border-medical-red {
+    border-color: var(--medical-red);
+}
+
+/* Hover states */
+.hover\:bg-medical-teal:hover {
+    background-color: var(--medical-teal);
+}
+
+.hover\:text-medical-teal:hover {
+    color: var(--medical-teal);
+}
+
+.hover\:border-medical-teal:hover {
+    border-color: var(--medical-teal);
+}
+
+/* Medical teal with opacity variations */
+.bg-medical-teal\/5 {
+    background-color: rgba(13, 148, 136, 0.05);
+}
+
+.bg-medical-teal\/10 {
+    background-color: rgba(13, 148, 136, 0.1);
+}
+
+.bg-medical-teal\/20 {
+    background-color: rgba(13, 148, 136, 0.2);
+}
+
+.bg-medical-teal\/80 {
+    background-color: rgba(13, 148, 136, 0.8);
+}
+
+.bg-medical-teal\/90 {
+    background-color: rgba(13, 148, 136, 0.9);
+}
+
+.text-medical-teal\/80 {
+    color: rgba(13, 148, 136, 0.8);
+}
+
+.border-medical-teal\/20 {
+    border-color: rgba(13, 148, 136, 0.2);
+}
+
+.border-medical-teal\/40 {
+    border-color: rgba(13, 148, 136, 0.4);
+}
+
+/* Medical red with opacity variations */
+.bg-medical-red\/5 {
+    background-color: rgba(220, 38, 38, 0.05);
+}
+
+.bg-medical-red\/10 {
+    background-color: rgba(220, 38, 38, 0.1);
+}
+
+.text-medical-red {
+    color: var(--medical-red);
+}
+
+/* Font family */
+.font-inter {
+    font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* Responsive breakpoints for animations */
+@media (prefers-reduced-motion: reduce) {
+
+    .animate-float,
+    .animate-pulse-slow,
+    .animate-bounce-slow,
+    .animate-fade-in,
+    .animate-slide-up,
+    .animate-slide-in-left,
+    .animate-slide-in-right {
+        animation: none;
+    }
+
+    .hover-lift:hover {
+        transform: none;
+    }
+}
+
+/* Print styles */
+@media print {
+
+    .scroll-indicator,
+    .hover-lift,
+    .glass-effect {
+        display: none;
+    }
+
+    .gradient-text {
+        -webkit-text-fill-color: initial;
+        color: var(--medical-teal);
+    }
+}
+
+/* Gallery Styles */
+.gallery-filter.active {
+    background-color: var(--medical-teal) !important;
+    color: white !important;
+}
+
+/* Carousel Styles */
+.carousel-slide {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* @tweakable carousel slide image positioning */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    position: relative;
+}
+
+.carousel-slide img {
+    /* @tweakable carousel image sizing and fit */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.carousel-dot.active {
+    opacity: 1 !important;
+}
+
+/* @tweakable section spacing between elements */
+.section-spacing {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+/* Partners Section Enhancements */
+.partners-grid {
+    gap: 2rem;
+}
+
+.partner-card {
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    min-height: 120px;
+}
+
+.partner-card:hover {
+    transform: translateY(-8px) rotate(1deg) scale(1.05);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.partner-logo-container {
+    transition: all 0.3s ease;
+}
+
+.partner-logo-placeholder {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.partner-logo-placeholder:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transform: rotate(-3deg);
+}
+
+.partner-info {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 10;
+}
+
+.partnership-benefit {
+    transition: transform 0.3s ease;
+}
+
+.partnership-benefit:hover {
+    transform: translateY(-5px);
+}
+
+/* Partners Section Horizontal Scroll */
+.partners-scroll-container {
+    /* @tweakable partners horizontal scroll container styling */
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 1rem 0;
+    scrollbar-width: thin;
+    scrollbar-color: var(--medical-teal) #f1f5f9;
+}
+
+.partners-scroll-container::-webkit-scrollbar {
+    /* @tweakable webkit scrollbar height for partners section */
+    height: 8px;
+}
+
+.partners-scroll-container::-webkit-scrollbar-track {
+    /* @tweakable webkit scrollbar track styling */
+    background: #f1f5f9;
+    border-radius: 4px;
+}
+
+.partners-scroll-container::-webkit-scrollbar-thumb {
+    /* @tweakable webkit scrollbar thumb styling */
+    background: var(--medical-teal);
+    border-radius: 4px;
+}
+
+.partners-scroll-container::-webkit-scrollbar-thumb:hover {
+    /* @tweakable webkit scrollbar thumb hover color */
+    background: #0891b2;
+}
+
+.partners-scroll-grid {
+    /* @tweakable partners scroll grid layout - flex instead of grid for horizontal scroll */
+    display: flex;
+    gap: 2rem;
+    min-width: max-content;
+    padding: 0 1rem;
+}
+
+.partner-scroll-card {
+    /* @tweakable partner scroll card sizing and flexibility */
+    flex: 0 0 auto;
+    width: 200px;
+    min-height: 140px;
+}
+
+/* Smooth scroll behavior */
+.partners-scroll-container {
+    /* @tweakable smooth scroll behavior for partners section */
+    scroll-behavior: smooth;
+}
+
+/* Partners logo styling */
+.partner-logo-image {
+    /* @tweakable partner logo image sizing and fit */
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    transition: transform 0.3s ease;
+}
+
+.partner-logo-image:hover {
+    /* @tweakable partner logo image hover scale */
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .partners-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .partner-card {
+        min-height: 100px;
+    }
+
+    .partner-logo-container {
+        width: 5rem;
+        height: 5rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .partners-grid {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1rem;
+    }
+}
+
+/* Welcome Section Enhancements */
+.welcome-image-container {
+    animation: slideInLeft 1s ease-out;
+}
+
+.welcome-main-card {
+    transform: rotate(2deg);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.welcome-main-card:hover {
+    transform: rotate(0deg) scale(1.05);
+}
+
+.welcome-content {
+    animation: slideInRight 1s ease-out 0.3s both;
+}
+
+.welcome-title-line {
+    display: inline-block;
+    opacity: 0;
+    animation: slideUp 0.8s ease-out forwards;
+}
+
+.welcome-title-line:nth-child(1) {
+    animation-delay: 0.5s;
+}
+
+.welcome-title-line:nth-child(2) {
+    animation-delay: 0.8s;
+}
+
+.welcome-message {
+    animation: fadeIn 1s ease-out 0.8s both;
+}
+
+.welcome-features {
+    animation: slideUp 1s ease-out 1s both;
+}
+
+.welcome-cta-container {
+    animation: fadeIn 1s ease-out 1.2s both;
+}
+
+/* Welcome Floating Icons Animation */
+.welcome-icon-1 {
+    animation: float 8s ease-in-out infinite;
+}
+
+.welcome-icon-2 {
+    animation: float 6s ease-in-out infinite reverse;
+    animation-delay: 2s;
+}
+
+.welcome-badge:hover .welcome-badge-shine {
+    transform: translateX(100%);
+}
+
+/* Responsive adjustments for welcome section */
+@media (max-width: 768px) {
+    .welcome-main-title {
+        font-size: 2.5rem;
+        line-height: 1.2;
+    }
+
+    .welcome-main-text {
+        font-size: 1.125rem;
+    }
+
+    .welcome-floating-icons {
+        display: none;
+    }
+
+    .welcome-features {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Contact Section Enhancements */
+.contact-section-bg {
+    background: linear-gradient(135deg, var(--medical-teal) 0%, #0891b2 50%, #1e40af 100%);
+}
+
+/* Enhanced Contact form input styling */
+.contact-form-input {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    border: 2px solid rgba(255, 255, 255, 0.3) !important;
+    color: white !important;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.contact-form-input::placeholder {
+    color: rgba(255, 255, 255, 0.8) !important;
+    font-weight: 400;
+}
+
+.contact-form-input:focus {
+    border-color: rgba(255, 255, 255, 0.8) !important;
+    background-color: rgba(255, 255, 255, 0.25) !important;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.contact-form-select option {
+    background-color: var(--medical-teal) !important;
+    color: white !important;
+    padding: 8px;
+}
+
+/* Contact info card styling */
+.contact-info-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.contact-info-card:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.contact-icon-bg {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+.contact-icon-bg:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: scale(1.1) rotate(3deg);
+}
+
+/* Contact section decorative elements */
+.contact-decoration {
+    opacity: 0.15;
+}
+
+.contact-form-button {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    color: var(--medical-teal) !important;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.contact-form-button:hover {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* @tweakable footer background color */
+.footer-bg {
+    background-color: #111827;
+}
+
+/* @tweakable service card hover animation duration */
+.service-card-animation {
+    transition-duration: 0.3s;
+}
+
+/* @tweakable team member photo size */
+.team-photo-size {
+    width: 8rem;
+    height: 8rem;
+}
+
+/* @tweakable gallery item overlay opacity */
+.gallery-overlay {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+}
+
+/* Enhanced Hero Section Styles */
+.hero-section {
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Hero Background Styling */
+.hero-bg-opacity {
+    opacity: 0.6;
+}
+
+.hero-bg-scale {
+    transition: transform 20s ease-in-out;
+    /* @tweakable hero background image border removal - removes any border or outline */
+    border: none;
+    outline: none;
+    /* @tweakable hero background image background removal - ensures transparent background */
+    background: transparent;
+}
+
+.hero-bg-scale:hover {
+    transform: scale(1.05);
+}
+
+/* Hero Background Slide */
+.hero-bg-slide img {
+    /* @tweakable hero slide image border and background removal */
+    border: none;
+    outline: none;
+    background: transparent;
+    /* @tweakable hero slide image object fit to maintain aspect without background */
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Hero Floating Elements */
+.hero-floating-elements {
+    animation-duration: 20s;
+}
+
+.hero-floating-shape {
+    border-radius: 50%;
+    filter: blur(1px);
+    opacity: 0.6;
+}
+
+.hero-shape-1 {
+    top: 10%;
+    left: 5%;
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(13, 148, 136, 0.2));
+    animation: float 8s ease-in-out infinite;
+}
+
+.hero-shape-2 {
+    top: 60%;
+    right: 8%;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.15), rgba(220, 38, 38, 0.2));
+    animation: float 12s ease-in-out infinite reverse;
+}
+
+.hero-shape-3 {
+    top: 30%;
+    left: 15%;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.2), rgba(59, 130, 246, 0.2));
+    animation: float 10s ease-in-out infinite;
+    animation-delay: 2s;
+}
+
+.hero-shape-4 {
+    bottom: 20%;
+    left: 8%;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(168, 85, 247, 0.2));
+    animation: float 15s ease-in-out infinite;
+    animation-delay: 1s;
+}
+
+.hero-shape-5 {
+    top: 20%;
+    right: 25%;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.25), rgba(34, 197, 94, 0.2));
+    animation: float 6s ease-in-out infinite;
+    animation-delay: 3s;
+}
+
+.hero-shape-6 {
+    bottom: 40%;
+    right: 15%;
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.15), rgba(251, 191, 36, 0.2));
+    animation: float 11s ease-in-out infinite reverse;
+    animation-delay: 1.5s;
+}
+
+/* Medical Symbol Decorations */
+.hero-medical-symbol {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 2rem;
+    animation: pulse 4s ease-in-out infinite;
+}
+
+.hero-symbol-1 {
+    top: 15%;
+    right: 5%;
+    animation-delay: 0s;
+}
+
+.hero-symbol-2 {
+    bottom: 25%;
+    left: 5%;
+    animation-delay: 1.5s;
+}
+
+.hero-symbol-3 {
+    top: 50%;
+    right: 10%;
+    animation-delay: 3s;
+}
+
+.hero-symbol-icon {
+    transition: transform 0.5s ease;
+}
+
+.hero-medical-symbol:hover .hero-symbol-icon {
+    transform: scale(1.2) rotate(10deg);
+}
+
+/* Hero Content Styling */
+.hero-content {
+    animation: slideInLeft 1s ease-out;
+}
+
+/* Hero Title Styling */
+.hero-title-container {
+    animation: fadeIn 1.2s ease-out 0.3s both;
+}
+
+.hero-main-title {
+    color: #FFFFFF;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+    line-height: 1.1;
+}
+
+.hero-title-line {
+    display: inline-block;
+    opacity: 0;
+    animation: slideUp 0.8s ease-out forwards;
+}
+
+.hero-title-primary {
+    color: #FFFFFF;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+    animation-delay: 0.5s;
+}
+
+.hero-title-gradient {
+    background: linear-gradient(135deg, #10B981 0%, #059669 30%, #047857 60%, #065F46 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: none;
+    animation-delay: 0.8s;
+}
+
+/* Hero Subtitle */
+.hero-subtitle {
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1s ease-out 0.8s both;
+}
+
+.hero-highlight {
+    color: #EF4444;
+    font-weight: 600;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+/* Hero CTA Buttons */
+.hero-cta-container {
+    animation: slideUp 1s ease-out 1s both;
+}
+
+.hero-cta-primary {
+    position: relative;
+    color: white;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.hero-cta-primary-bg {
+    background: linear-gradient(135deg, var(--medical-teal) 0%, #0891b2 100%);
+}
+
+.hero-cta-primary-shine {
+    background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
+}
+
+.hero-cta-primary:hover .hero-cta-primary-shine {
+    transform: translateX(100%);
+}
+
+.hero-cta-secondary {
+    position: relative;
+    color: white;
+}
+
+.hero-cta-secondary-bg {
+    background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%) !important;
+    backdrop-filter: blur(10px);
+}
+
+.hero-cta-secondary-border {
+    border: 2px solid rgba(239, 68, 68, 0.5) !important;
+    transition: border-color 0.3s ease;
+}
+
+.hero-cta-secondary:hover .hero-cta-secondary-border {
+    border-color: rgba(239, 68, 68, 0.8) !important;
+}
+
+/* Hero Trust Indicators */
+.hero-trust-indicators {
+    animation: fadeIn 1s ease-out 1.3s both;
+}
+
+.hero-trust-item {
+    color: rgba(255, 255, 255, 0.95);
+    transition: transform 0.3s ease;
+}
+
+.hero-trust-item:hover {
+    transform: translateY(-5px);
+}
+
+.hero-trust-number {
+    color: #EF4444;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.hero-trust-label {
+    color: rgba(255, 255, 255, 0.85);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Hero Visual Card */
+.hero-visual-container {
+    animation: slideInRight 1s ease-out 0.5s both;
+}
+
+.hero-main-card {
+    transform: rotate(-2deg);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-main-card:hover {
+    transform: rotate(0deg) scale(1.05);
+}
+
+.hero-card-bg {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.9));
+    backdrop-filter: blur(20px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+}
+
+.hero-card-border {
+    background: linear-gradient(45deg, var(--medical-teal), #06B6D4, var(--medical-teal));
+    background-size: 300% 300%;
+    animation: gradientShift 3s ease infinite;
+    padding: 2px;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Hero Card Decorations */
+.hero-card-dot-1 {
+    top: -8px;
+    left: -8px;
+    background: linear-gradient(45deg, #EF4444, #DC2626);
+    animation: bounce 3s infinite;
+}
+
+.hero-card-dot-2 {
+    bottom: -6px;
+    right: -6px;
+    background: linear-gradient(45deg, #10B981, #06B6D4);
+    animation: pulse 2s infinite;
+}
+
+.hero-card-dot-3 {
+    top: 50%;
+    right: -10px;
+    background: linear-gradient(45deg, #8B5CF6, #EC4899);
+    animation: float 4s infinite;
+}
+
+.hero-card-icon-container {
+    position: relative;
+}
+
+.hero-card-icon-bg {
+    background: linear-gradient(135deg, var(--medical-teal), #0891b2);
+}
+
+.hero-card-icon-shine {
+    background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+}
+
+.hero-card-title {
+    color: #1F2937;
+}
+
+.hero-card-description {
+    color: #6B7280;
+}
+
+/* Hero Card Status */
+.hero-card-status {
+    color: var(--medical-teal);
+}
+
+.hero-status-dot {
+    background: #10B981;
+    animation: pulse 2s infinite;
+}
+
+.hero-status-text {
+    color: var(--medical-teal);
+}
+
+/* Floating Stats Cards */
+.hero-floating-stats {
+    animation-delay: 1.5s;
+}
+
+.hero-stat-card {
+    transition: all 0.5s ease;
+}
+
+.hero-stat-1 {
+    top: 20%;
+    left: -20%;
+    animation: float 6s infinite;
+}
+
+.hero-stat-2 {
+    bottom: 30%;
+    right: -25%;
+    animation: float 8s infinite reverse;
+    animation-delay: 2s;
+}
+
+.hero-stat-bg {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.hero-stat-icon {
+    background: linear-gradient(135deg, var(--medical-teal), #06B6D4);
+    color: white;
+}
+
+.hero-stat-number {
+    color: var(--medical-teal);
+}
+
+.hero-stat-label {
+    color: #6B7280;
+}
+
+/* Hero Scroll Indicator */
+.hero-scroll-indicator {
+    bottom: 2rem;
+    animation: bounce 2s infinite;
+}
+
+.hero-scroll-container {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.hero-scroll-mouse {
+    border-color: rgba(255, 255, 255, 0.6);
+    transition: all 0.3s ease;
+}
+
+.hero-scroll-mouse:hover {
+    border-color: #EF4444;
+    transform: scale(1.1);
+}
+
+.hero-scroll-wheel {
+    background: #EF4444;
+    animation: scrollWheel 2s infinite;
+}
+
+@keyframes scrollWheel {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(15px);
+        opacity: 0;
+    }
+}
+
+.hero-scroll-shine {
+    background: linear-gradient(transparent, rgba(239, 68, 68, 0.2), transparent);
+    transition: opacity 0.3s ease;
+}
+
+.hero-scroll-mouse:hover .hero-scroll-shine {
+    opacity: 1;
+}
+
+.hero-scroll-text {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.875rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero-main-title {
+        font-size: 2.5rem;
+        line-height: 1.2;
+    }
+
+    .hero-subtitle {
+        font-size: 1.125rem;
+    }
+
+    .hero-floating-shape {
+        opacity: 0.3;
+    }
+
+    .hero-stat-1,
+    .hero-stat-2 {
+        display: none;
+    }
+}
