@@ -911,7 +911,54 @@ document.addEventListener('DOMContentLoaded', function() {
     // Partners Section Animation
     const partnersSection = document.getElementById('partenaires');
     if (partnersSection) {
-        const partnerCards = partnersSection.querySelectorAll('.partner-card');
+        const partnerCards = partnersSection.querySelectorAll('.partner-scroll-card');
+        const partnersScrollContainer = partnersSection.querySelector('.partners-scroll-container');
+
+        // Auto-scroll functionality for partners
+        let partnersScrollPosition = 0;
+        let partnersScrollDirection = 1;
+        const partnersScrollSpeed = /* @tweakable partners auto-scroll speed in pixels per interval */ 1;
+        const partnersScrollInterval = /* @tweakable partners auto-scroll interval in milliseconds */ 50;
+        let partnersAutoScrollEnabled = true;
+
+        function autoScrollPartners() {
+            if (!partnersScrollContainer || !partnersAutoScrollEnabled) return;
+
+            const maxScrollLeft = partnersScrollContainer.scrollWidth - partnersScrollContainer.clientWidth;
+
+            partnersScrollPosition += partnersScrollSpeed * partnersScrollDirection;
+
+            // Reverse direction at boundaries
+            if (partnersScrollPosition >= maxScrollLeft) {
+                partnersScrollDirection = -1;
+            } else if (partnersScrollPosition <= 0) {
+                partnersScrollDirection = 1;
+            }
+
+            partnersScrollContainer.scrollLeft = partnersScrollPosition;
+        }
+
+        // Start auto-scroll
+        const partnersScrollTimer = setInterval(autoScrollPartners, partnersScrollInterval);
+
+        // Pause auto-scroll on hover
+        if (partnersScrollContainer) {
+            partnersScrollContainer.addEventListener('mouseenter', () => {
+                partnersAutoScrollEnabled = false;
+            });
+
+            partnersScrollContainer.addEventListener('mouseleave', () => {
+                partnersAutoScrollEnabled = true;
+                partnersScrollPosition = partnersScrollContainer.scrollLeft;
+            });
+
+            // Manual scroll handling
+            partnersScrollContainer.addEventListener('scroll', () => {
+                if (!partnersAutoScrollEnabled) {
+                    partnersScrollPosition = partnersScrollContainer.scrollLeft;
+                }
+            });
+        }
 
         // Animate partner cards on scroll
         const partnerObserver = new IntersectionObserver((entries) => {
@@ -1022,4 +1069,319 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Expose function globally for potential external use
     window.addPartner = addPartner;
+
+    // Family Offers Document Download Function
+    function downloadOfferDocument(packageType) {
+        // @tweakable offer document download configuration
+        const offerDocuments = {
+            'forfait-basique': {
+                filename: 'Forfait_Famille_Basique_Polyclinique_Shukrani.pdf',
+                title: 'Forfait Famille Basique'
+            },
+            'forfait-premium': {
+                filename: 'Forfait_Famille_Premium_Polyclinique_Shukrani.pdf',
+                title: 'Forfait Famille Premium'
+            },
+            'forfait-vip': {
+                filename: 'Forfait_Famille_VIP_Polyclinique_Shukrani.pdf',
+                title: 'Forfait Famille VIP'
+            }
+        };
+
+        const selectedOffer = offerDocuments[packageType];
+
+        if (!selectedOffer) {
+            showNotification('Document non disponible pour le moment', 'error');
+            return;
+        }
+
+        // @tweakable offer document content generation
+        const offerContent = generateOfferPDF(packageType, selectedOffer.title);
+
+        // Create downloadable PDF blob
+        try {
+            const blob = new Blob([offerContent], { type: 'application/pdf' });
+            const url = window.URL.createObjectURL(blob);
+
+            // Create temporary download link
+            const downloadLink = document.createElement('a');
+            downloadLink.href = url;
+            downloadLink.download = selectedOffer.filename;
+            downloadLink.style.display = 'none';
+
+            // Trigger download
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+            document.body.removeChild(downloadLink);
+
+            // Clean up URL
+            window.URL.revokeObjectURL(url);
+
+            showNotification(`Brochure "${selectedOffer.title}" téléchargée avec succès!`, 'success');
+
+        } catch (error) {
+            console.error('Erreur lors du téléchargement:', error);
+            // Fallback: Show offer details in new window
+            showOfferInNewWindow(packageType, selectedOffer.title);
+        }
+    }
+
+    // @tweakable offer PDF content generation function
+    function generateOfferPDF(packageType, title) {
+        // This is a simplified PDF content generation
+        // In a real implementation, you would use a PDF library like jsPDF
+        const pdfContent = `
+%PDF-1.4
+1 0 obj
+<<
+/Type /Catalog
+/Pages 2 0 R
+>>
+endobj
+
+2 0 obj
+<<
+/Type /Pages
+/Kids [3 0 R]
+/Count 1
+>>
+endobj
+
+3 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Contents 4 0 R
+/Resources <<
+/Font <<
+/F1 5 0 R
+>>
+>>
+>>
+endobj
+
+4 0 obj
+<<
+/Length 200
+>>
+stream
+BT
+/F1 24 Tf
+100 700 Td
+(${title}) Tj
+0 -50 Td
+/F1 12 Tf
+(Polyclinique Shukrani - La Sante pour tous) Tj
+0 -30 Td
+(Detaille complet du forfait ${packageType}) Tj
+0 -20 Td
+(Contactez-nous: +243 XX XXX XXXX) Tj
+0 -20 Td
+(Email: info@polycliniqueshukrani.cd) Tj
+ET
+endstream
+endobj
+
+5 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica
+>>
+endobj
+
+xref
+0 6
+0000000000 65535 f
+0000000010 00000 n
+0000000053 00000 n
+0000000110 00000 n
+0000000279 00000 n
+0000000529 00000 n
+trailer
+<<
+/Size 6
+/Root 1 0 R
+>>
+startxref
+625
+%%EOF
+        `;
+
+        return pdfContent;
+    }
+
+    // @tweakable fallback function to show offer in new window
+    function showOfferInNewWindow(packageType, title) {
+        const offerDetails = getOfferDetails(packageType);
+
+        const newWindow = window.open('', '_blank', 'width=800,height=600,scrollbars=yes');
+        newWindow.document.write(`
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <title>${title} - Polyclinique Shukrani</title>
+                <style>
+                    body {
+                        font-family: Arial, sans-serif;
+                        margin: 40px;
+                        line-height: 1.6;
+                        color: #333;
+                    }
+                    .header {
+                        text-align: center;
+                        border-bottom: 2px solid #0D9488;
+                        padding-bottom: 20px;
+                        margin-bottom: 30px;
+                    }
+                    .logo {
+                        font-size: 24px;
+                        font-weight: bold;
+                        color: #0D9488;
+                        margin-bottom: 10px;
+                    }
+                    .offer-title {
+                        font-size: 28px;
+                        font-weight: bold;
+                        color: #1F2937;
+                        margin-bottom: 10px;
+                    }
+                    .price {
+                        font-size: 36px;
+                        font-weight: bold;
+                        color: #0D9488;
+                        margin: 20px 0;
+                    }
+                    .features {
+                        background: #F9FAFB;
+                        padding: 20px;
+                        border-radius: 8px;
+                        margin: 20px 0;
+                    }
+                    .feature {
+                        margin: 10px 0;
+                        padding-left: 20px;
+                    }
+                    .contact {
+                        background: #0D9488;
+                        color: white;
+                        padding: 20px;
+                        border-radius: 8px;
+                        text-align: center;
+                        margin-top: 30px;
+                    }
+                    .print-btn {
+                        background: #0D9488;
+                        color: white;
+                        padding: 12px 24px;
+                        border: none;
+                        border-radius: 6px;
+                        cursor: pointer;
+                        font-size: 16px;
+                        margin: 20px 0;
+                    }
+                    .print-btn:hover {
+                        background: #0891b2;
+                    }
+                </style>
+            </head>
+            <body>
+                <div class="header">
+                    <div class="logo">POLYCLINIQUE SHUKRANI</div>
+                    <div style="color: #0D9488; font-style: italic;">La Santé pour tous</div>
+                </div>
+
+                <div class="offer-title">${title}</div>
+                <div class="price">${offerDetails.price} FC/mois</div>
+                <p><strong>Pour une famille de ${offerDetails.familySize} personnes</strong></p>
+
+                <div class="features">
+                    <h3>Services inclus :</h3>
+                    ${offerDetails.features.map(feature => `<div class="feature">• ${feature}</div>`).join('')}
+                </div>
+
+                <button class="print-btn" onclick="window.print()">Imprimer cette brochure</button>
+
+                <div class="contact">
+                    <h3>Contactez-nous pour souscrire</h3>
+                    <p><strong>Téléphone :</strong> +243 XX XXX XXXX</p>
+                    <p><strong>Email :</strong> info@polycliniqueshukrani.cd</p>
+                    <p><strong>Adresse :</strong> 123 Avenue de la Santé, Kinshasa</p>
+                </div>
+            </body>
+            </html>
+        `);
+
+        showNotification(`Brochure "${title}" ouverte dans un nouvel onglet`, 'success');
+    }
+
+    // @tweakable offer details configuration
+    function getOfferDetails(packageType) {
+        const offerDetails = {
+            'forfait-basique': {
+                price: '25,000',
+                familySize: '4',
+                features: [
+                    '2 consultations générales par mois',
+                    'Analyses de base incluses',
+                    'Urgences 24h/24',
+                    'Suivi médical personnalisé',
+                    'Carnet de santé familial'
+                ]
+            },
+            'forfait-premium': {
+                price: '45,000',
+                familySize: '5',
+                features: [
+                    '4 consultations générales par mois',
+                    '2 consultations spécialisées',
+                    'Analyses complètes incluses',
+                    '1 échographie par trimestre',
+                    'Urgences prioritaires 24h/24',
+                    'Suivi médical personnalisé',
+                    'Carnet de santé familial numérique'
+                ]
+            },
+            'forfait-vip': {
+                price: '75,000',
+                familySize: '6',
+                features: [
+                    'Consultations illimitées',
+                    'Tous spécialistes inclus',
+                    'Analyses premium illimitées',
+                    'Imagerie médicale incluse',
+                    'Consultations à domicile',
+                    'Ligne directe dédiée',
+                    'Urgences VIP 24h/24',
+                    'Suivi médical personnalisé premium',
+                    'Application mobile dédiée'
+                ]
+            }
+        };
+
+        return offerDetails[packageType] || offerDetails['forfait-basique'];
+    }
+
+    // Expose download function globally
+    window.downloadOfferDocument = downloadOfferDocument;
+
+    // Enhanced offer cards interactions
+    document.querySelectorAll('.offer-card').forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-12px) scale(1.02)';
+            const icon = this.querySelector('.w-16');
+            if (icon) {
+                icon.style.transform = 'scale(1.15) rotate(5deg)';
+            }
+        });
+
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+            const icon = this.querySelector('.w-16');
+            if (icon) {
+                icon.style.transform = 'scale(1) rotate(0deg)';
+            }
+        });
+    });
 });

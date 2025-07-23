@@ -86,8 +86,8 @@
                             d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" />
                     </svg>
                     <div class="text-gray-300 text-sm">
-                        Avenue de la Santé<br>
-                        Kinshasa, RDC
+                        N° 12, Av/ Christian KUNDA, Q/ Golf Tshamalale<br>
+                        Lubumbashi, RDC
                     </div>
                 </div>
                 <div class="flex items-center space-x-3">
@@ -95,7 +95,7 @@
                         <path
                             d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                     </svg>
-                    <span class="text-gray-300 text-sm">+243 XX XXX XXXX</span>
+                    <span class="text-gray-300 text-sm">+243 853 951 763</span>
                 </div>
                 <div class="flex items-center space-x-3">
                     <svg class="w-4 h-4 text-medical-teal flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -103,7 +103,7 @@
                         <path d="M3 8h6v2H3V8z" />
                         <path d="M8 12h2v2H8v-2z" />
                     </svg>
-                    <span class="text-gray-300 text-sm">info@polycliniqueshukrani.cd</span>
+                    <span class="text-gray-300 text-sm">polyshukrani@gmail.com</span>
                 </div>
             </div>
         </div>

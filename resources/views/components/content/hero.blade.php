@@ -4,12 +4,11 @@
     <div class="absolute inset-0 hero-bg-opacity">
         <div id="hero-bg-carousel" class="relative w-full h-full">
             <div class="hero-bg-slide active absolute inset-0 opacity-100 transition-opacity duration-2000">
-                <img src="{{ asset('intervention_2.png') }}" alt=""
-                    class="w-full h-full object-cover hero-bg-scale"
+                <img src="{{ asset('imges/img-17.jpg') }}" alt="" class="w-full h-full object-cover hero-bg-scale"
                     style="/* @tweakable hero background image styling - removes border and ensures transparent background */ filter: brightness(1.1) contrast(1.05); border: none; outline: none; background: transparent;">
             </div>
             <div class="hero-bg-slide absolute inset-0 opacity-0 transition-opacity duration-2000">
-                <img src="{{ asset('intervention_3.png') }}" alt=""
+                <img src="{{ asset('imges/img-13.jpg') }}" alt=""
                     class="w-full h-full object-cover hero-bg-scale"
                     style="/* @tweakable hero background image styling - removes border and ensures transparent background */ filter: brightness(1.1) contrast(1.05); border: none; outline: none; background: transparent;">
             </div>
@@ -67,7 +66,7 @@
                     class="hero-badge inline-flex items-center px-6 py-3 rounded-full font-medium text-sm transition-all duration-500 hover:scale-105">
                     <div class="hero-badge-icon w-2 h-2 rounded-full mr-3"></div>
                     <i class="fas fa-award mr-2 hero-badge-icon-fa"></i>
-                    Excellence Médicale Certifiée
+                    Excellence Médicale pour tous
                     <div class="hero-badge-shine absolute inset-0 rounded-full"></div>
                 </div>
 
@@ -85,7 +84,7 @@
 
                     <!-- Subtitle with Better Typography -->
                     <p class="hero-subtitle text-lg md:text-xl lg:text-2xl max-w-2xl leading-relaxed"
-                        style="/* @tweakable hero subtitle text color - dark grey instead of black */ color: rgba(55, 65, 81, 0.95); text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);">
+                        style="/* @tweakable hero subtitle text color - dark grey instead of black */ color: rgba(28, 33, 41, 0.95); text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);">
                         À la <span class="hero-highlight">Polyclinique Shukrani</span>, nous offrons des soins médicaux
                         de
                         <span class="hero-highlight">qualité supérieure</span> avec compassion et dévouement.

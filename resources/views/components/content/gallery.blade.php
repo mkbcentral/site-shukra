@@ -49,90 +49,90 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Gallery Item 1 -->
                 <div class="gallery-item consultation cursor-pointer group relative overflow-hidden rounded-2xl"
-                    data-image="{{ asset('intervention_2.png') }}" data-title="Cabinet de Consultation"
+                    data-image="{{ asset('imges/img-1.jpg') }}" data-title="Cabinet de Consultation"
                     data-description="Espaces de consultation modernes et confortables pour nos patients">
-                    <img src="{{ asset('intervention_2.png') }}" alt="Cabinet de Consultation"
+                    <img src="{{ asset('imges/img-1.jpg') }}" alt="Cabinet de Consultation"
                         class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
                     <div
                         class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <div class="absolute bottom-4 left-4 text-white">
-                            <h3 class="text-lg font-semibold">Cabinet de Consultation</h3>
-                            <p class="text-sm opacity-90">Espaces modernes et confortables</p>
+                            <h3 class="text-lg font-semibold"></h3>
+                            <p class="text-sm opacity-90"></p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Gallery Item 2 -->
                 <div class="gallery-item laboratoire cursor-pointer group relative overflow-hidden rounded-2xl"
-                    data-image="{{ asset('intervention_4.png') }}" data-title="Laboratoire Médical"
+                    data-image="{{ asset('imges/img-12.jpg') }}" data-title="Laboratoire Médical"
                     data-description="Laboratoire équipé de technologies de pointe pour analyses précises">
-                    <img src="{{ asset('intervention_4.png') }}" alt="Laboratoire"
+                    <img src="{{ asset('imges/img-12.jpg') }}" alt="Laboratoire"
                         class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
                     <div
                         class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <div class="absolute bottom-4 left-4 text-white">
-                            <h3 class="text-lg font-semibold">Laboratoire Médical</h3>
-                            <p class="text-sm opacity-90">Technologies de pointe</p>
+                            <h3 class="text-lg font-semibold"></h3>
+                            <p class="text-sm opacity-90"></p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Gallery Item 3 -->
                 <div class="gallery-item urgence cursor-pointer group relative overflow-hidden rounded-2xl"
-                    data-image="{{ asset('intervention_3.png') }}" data-title="Salle d'Urgence"
+                    data-image="{{ asset('imges/img-7.jpg') }}" data-title="Salle d'Urgence"
                     data-description="Service d'urgence équipé pour interventions rapides et efficaces">
-                    <img src="{{ asset('intervention_3.png') }}" alt="Salle d'Urgence"
+                    <img src="{{ asset('imges/img-7.jpg') }}" alt="Salle d'Urgence"
                         class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
                     <div
                         class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <div class="absolute bottom-4 left-4 text-white">
-                            <h3 class="text-lg font-semibold">Salle d'Urgence</h3>
-                            <p class="text-sm opacity-90">Interventions rapides 24h/24</p>
+                            <h3 class="text-lg font-semibold"></h3>
+                            <p class="text-sm opacity-90"></p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Gallery Item 4 -->
                 <div class="gallery-item consultation cursor-pointer group relative overflow-hidden rounded-2xl"
-                    data-image="{{ asset('intervention_4.png') }}" data-title="Salle d'Attente"
+                    data-image="{{ asset('imges/img-3.jpg') }}" data-title="Salle d'Attente"
                     data-description="Espaces d'attente confortables et accueillants pour nos patients">
-                    <img src="{{ asset('intervention_4.png') }}" alt="Salle d'Attente"
+                    <img src="{{ asset('imges/img-3.jpg') }}" alt="Salle d'Attente"
                         class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
                     <div
                         class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <div class="absolute bottom-4 left-4 text-white">
-                            <h3 class="text-lg font-semibold">Salle d'Attente</h3>
-                            <p class="text-sm opacity-90">Confort et accueil</p>
+                            <h3 class="text-lg font-semibold"></h3>
+                            <p class="text-sm opacity-90"></p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Gallery Item 5 -->
                 <div class="gallery-item chirurgie cursor-pointer group relative overflow-hidden rounded-2xl"
-                    data-image="{{ asset('intervention_chirurgicale.png') }}" data-title="Bloc Opératoire"
+                    data-image="{{ asset('imges/img-3.jpg') }}" data-title="Bloc Opératoire"
                     data-description="Blocs opératoires modernes avec équipements chirurgicaux de pointe">
-                    <img src="{{ asset('intervention_chirurgicale.png') }}" alt="Bloc Opératoire"
+                    <img src="{{ asset('imges/img-3.jpg') }}" alt="Bloc Opératoire"
                         class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
                     <div
                         class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <div class="absolute bottom-4 left-4 text-white">
-                            <h3 class="text-lg font-semibold">Bloc Opératoire</h3>
-                            <p class="text-sm opacity-90">Chirurgie moderne</p>
+                            <h3 class="text-lg font-semibold"></h3>
+                            <p class="text-sm opacity-90"></p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Gallery Item 6 -->
                 <div class="gallery-item chirurgie cursor-pointer group relative overflow-hidden rounded-2xl"
-                    data-image="{{ asset('intervention_2.png') }}" data-title="Chirurgie Laparoscopique"
+                    data-image="{{ asset('imges/img-4.jpg') }}" data-title="Chirurgie Laparoscopique"
                     data-description="Chirurgie minimalement invasive avec techniques avancées">
-                    <img src="{{ asset('intervention_2.png') }}" alt="Chirurgie Laparoscopique"
+                    <img src="{{ asset('imges/img-4.jpg') }}" alt="Chirurgie Laparoscopique"
                         class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
                     <div
                         class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <div class="absolute bottom-4 left-4 text-white">
-                            <h3 class="text-lg font-semibold">Chirurgie Laparoscopique</h3>
-                            <p class="text-sm opacity-90">Techniques minimalement invasives</p>
+                            <h3 class="text-lg font-semibold"></h3>
+                            <p class="text-sm opacity-90"></p>
                         </div>
                     </div>
                 </div>

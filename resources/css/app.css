@@ -1205,6 +1205,169 @@
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
+/* Family Offers Section Styling */
+.offer-card {
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    /* @tweakable offer card minimum height */
+    min-height: 580px;
+}
+
+.offer-card:hover {
+    /* @tweakable offer card hover shadow intensity */
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.offer-price-container {
+    /* @tweakable offer price container styling */
+    background: linear-gradient(135deg, rgba(13, 148, 136, 0.05), rgba(59, 130, 246, 0.05));
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid rgba(13, 148, 136, 0.1);
+    transition: all 0.3s ease;
+}
+
+.offer-card:hover .offer-price-container {
+    /* @tweakable offer price container hover effect */
+    background: linear-gradient(135deg, rgba(13, 148, 136, 0.1), rgba(59, 130, 246, 0.1));
+    border-color: rgba(13, 148, 136, 0.2);
+    transform: scale(1.02);
+}
+
+.download-btn {
+    position: relative;
+    overflow: hidden;
+    /* @tweakable download button transition duration */
+    transition: all 0.3s ease;
+}
+
+.download-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    /* @tweakable download button shine effect */
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.download-btn:hover::before {
+    left: 100%;
+}
+
+.download-btn:active {
+    /* @tweakable download button active state */
+    transform: scale(0.98);
+}
+
+/* Offer card feature styling */
+.offer-card .space-y-3 {
+    /* @tweakable offer features container spacing */
+    margin: 24px 0;
+}
+
+.offer-card .space-y-3>div {
+    /* @tweakable individual feature item styling */
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease;
+}
+
+.offer-card .space-y-3>div:last-child {
+    border-bottom: none;
+}
+
+.offer-card:hover .space-y-3>div {
+    /* @tweakable feature items hover effect */
+    padding-left: 8px;
+}
+
+/* Popular package styling */
+.offer-card.border-2.border-medical-teal {
+    /* @tweakable popular package border animation */
+    animation: popularPackagePulse 3s ease-in-out infinite;
+}
+
+@keyframes popularPackagePulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 0 0 rgba(13, 148, 136, 0.4);
+    }
+
+    50% {
+        box-shadow: 0 0 0 10px rgba(13, 148, 136, 0);
+    }
+}
+
+/* Package badge animations */
+.offer-card .absolute.top-6.right-6 {
+    /* @tweakable package badge animation */
+    animation: badgeBounce 2s ease-in-out infinite;
+}
+
+@keyframes badgeBounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+/* VIP package special styling */
+.offer-card .bg-gradient-to-br.from-purple-500.to-pink-500 {
+    /* @tweakable VIP package icon special effect */
+    box-shadow: 0 4px 15px rgba(168, 85, 247, 0.3);
+}
+
+.offer-card:hover .bg-gradient-to-br.from-purple-500.to-pink-500 {
+    /* @tweakable VIP package icon hover effect */
+    box-shadow: 0 8px 25px rgba(168, 85, 247, 0.4);
+    animation: vipIconGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes vipIconGlow {
+    0% {
+        filter: brightness(1);
+    }
+
+    100% {
+        filter: brightness(1.2);
+    }
+}
+
+/* Responsive adjustments for offers section */
+@media (max-width: 1024px) {
+    .offer-card {
+        /* @tweakable tablet offer card height */
+        min-height: 520px;
+    }
+}
+
+@media (max-width: 768px) {
+    .offer-card {
+        /* @tweakable mobile offer card height */
+        min-height: 480px;
+        margin-bottom: 2rem;
+    }
+
+    .offer-price-container {
+        padding: 16px;
+    }
+
+    .download-btn {
+        /* @tweakable mobile download button sizing */
+        padding: 14px 20px;
+        font-size: 14px;
+    }
+}
+
 /* Responsive Adjustments */
 @media (max-width: 768px) {
     .hero-main-title {
@@ -1224,4 +1387,174 @@
     .hero-stat-2 {
         display: none;
     }
+}
+
+/* Video Advertisement Section Styling */
+.video-player-container {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.video-player-container:hover {
+    transform: scale(1.02);
+    box-shadow: 0 35px 70px -12px rgba(0, 0, 0, 0.6);
+}
+
+/* Video Play Button Styling */
+.video-play-btn {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.video-play-btn:hover {
+    transform: scale(1.1);
+}
+
+.video-play-btn:active {
+    transform: scale(0.95);
+}
+
+.play-btn-bg {
+    transition: all 0.3s ease;
+}
+
+.video-play-btn:hover .play-btn-bg {
+    background: linear-gradient(135deg, rgba(239, 68, 68, 1), rgba(220, 38, 38, 1)) !important;
+    box-shadow: 0 15px 35px rgba(239, 68, 68, 0.4);
+}
+
+.play-btn-ring {
+    animation: ringPulse 2s ease-in-out infinite;
+}
+
+@keyframes ringPulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    70% {
+        transform: scale(1.3);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1.3);
+        opacity: 0;
+    }
+}
+
+/* Video Controls Styling */
+.video-controls {
+    transition: opacity 0.3s ease;
+}
+
+.video-progress-container:hover .video-progress-fill {
+    box-shadow: 0 0 8px rgba(239, 68, 68, 0.6);
+}
+
+.video-progress-container::after {
+    content: '';
+    position: absolute;
+    top: -8px;
+    bottom: -8px;
+    left: 0;
+    right: 0;
+    background: transparent;
+}
+
+/* Video CTA Button Styling */
+.video-cta-btn {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.video-cta-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.video-cta-btn:hover::before {
+    left: 100%;
+}
+
+.video-cta-btn:active {
+    transform: scale(0.98);
+}
+
+/* Video Information Card Styling */
+.video-player-container+.mt-12 {
+    animation: slideUp 0.8s ease-out 0.5s both;
+}
+
+/* Video Section Background Effects */
+#video-publicitaire {
+    background: linear-gradient(135deg, #111827 0%, #1f2937 50%, rgba(13, 148, 136, 0.1) 100%);
+}
+
+/* Video Quality Indicator Animation */
+.text-xs.bg-white\/20 {
+    animation: qualityBlink 3s ease-in-out infinite;
+}
+
+@keyframes qualityBlink {
+
+    0%,
+    100% {
+        opacity: 0.8;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Video Section Responsive Adjustments */
+@media (max-width: 768px) {
+    .video-play-btn {
+        width: 80px;
+        height: 80px;
+    }
+
+    .video-play-btn i {
+        font-size: 1.5rem;
+    }
+
+    .video-controls {
+        padding: 1rem;
+    }
+
+    .video-progress-container {
+        height: 4px;
+        margin-bottom: 0.75rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .video-player-container {
+        border-radius: 16px;
+    }
+
+    .video-player-container video {
+        border-radius: 16px;
+    }
+}
+
+/* Video Loading State */
+.video-loading {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
 }

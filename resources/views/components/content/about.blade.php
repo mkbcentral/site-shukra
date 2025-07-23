@@ -76,7 +76,7 @@
                <div class="space-y-8">
                    <div class="grid grid-cols-2 gap-6">
                        <div class="bg-white rounded-2xl p-6 medical-shadow hover-lift text-center">
-                           <div class="text-3xl font-bold text-medical-teal mb-2">1000+</div>
+                           <div class="text-3xl font-bold text-medical-teal mb-2">9000+</div>
                            <div class="text-gray-600">Patients soignés</div>
                        </div>
                        <div class="bg-white rounded-2xl p-6 medical-shadow hover-lift text-center">
@@ -84,7 +84,7 @@
                            <div class="text-gray-600">Service d'urgence</div>
                        </div>
                        <div class="bg-white rounded-2xl p-6 medical-shadow hover-lift text-center">
-                           <div class="text-3xl font-bold text-medical-teal mb-2">15+</div>
+                           <div class="text-3xl font-bold text-medical-teal mb-2">5+</div>
                            <div class="text-gray-600">Années d'expérience</div>
                        </div>
                        <div class="bg-white rounded-2xl p-6 medical-shadow hover-lift text-center">

@@ -1,17 +1,22 @@
  <!-- Top Contact Bar -->
  <div class="bg-medical-teal text-white py-2 px-4 animate-slide-in-left">
-     <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center text-sm">
-         <div class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-6">
-             <div class="flex items-center space-x-2">
+     <div
+         class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center text-sm text-center sm:text-left">
+         <div class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-6 w-full sm:w-auto">
+             <div class="flex items-center justify-center sm:justify-start space-x-2">
                  <i class="fas fa-phone w-4 h-4"></i>
                  <span>+243 853 951 763</span>
              </div>
-             <div class="flex items-center space-x-2">
+             <div class="flex items-center justify-center sm:justify-start space-x-2">
                  <i class="fas fa-envelope w-4 h-4"></i>
-                 <span>info@polycliniqueshukrani.cd</span>
+                 <span>polyshukrani@gmail.com</span>
+             </div>
+             <div class="flex items-center justify-center sm:justify-start space-x-2">
+                 <i class="fas fa-map-marker-alt w-4 h-4"></i>
+                 <span>N° 12, Av/ Christian KUNDA, Q/ Golf Tshamalale</span>
              </div>
          </div>
-         <div class="flex items-center space-x-2">
+         <div class="flex items-center justify-center sm:justify-end space-x-2 mt-2 sm:mt-0">
              <i class="fas fa-clock w-4 h-4"></i>
              <span>Ouvert 24h/24 - 7j/7</span>
          </div>
@@ -60,8 +65,6 @@
                      data-section="services">Services</a>
                  <a href="#galerie" class="nav-link-mobile text-gray-900 hover:text-medical-teal transition-colors"
                      data-section="galerie">Galerie</a>
-                 <a href="#equipe" class="nav-link-mobile text-gray-900 hover:text-medical-teal transition-colors"
-                     data-section="equipe">Notre Équipe</a>
                  <a href="#about" class="nav-link-mobile text-gray-900 hover:text-medical-teal transition-colors"
                      data-section="about">À Propos</a>
                  <a href="#contact" class="nav-link-mobile text-gray-900 hover:text-medical-teal transition-colors"
