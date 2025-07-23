@@ -113,7 +113,7 @@
     <div class="border-t border-gray-800 pt-8 mt-10">
         <div class="flex flex-col md:flex-row justify-between items-center">
             <p class="text-gray-400 text-sm mb-4 md:mb-0">
-                &copy; 2024 Polyclinique Shukrani. Tous droits réservés.
+                &copy; 2025 Polyclinique Shukrani. Tous droits réservés.
             </p>
             <div class="flex space-x-6 text-sm">
                 <a href="#" class="text-gray-400 hover:text-medical-teal transition-colors">Politique de
