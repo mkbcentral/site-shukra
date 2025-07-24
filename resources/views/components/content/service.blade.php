@@ -18,7 +18,7 @@
                  Excellence <span class="gradient-text">Médicale</span>
              </h2>
              <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-                 Des soins de qualité supérieure avec des équipements modernes et une équipe de professionnels
+                 Des soins de qualité supérieure avec des équipements modernes et une équipe des professionnels
                  expérimentés
              </p>
          </div>
@@ -50,7 +50,7 @@
                  </div>
                  <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-500 transition-colors">Urgences
                      24h/24</h3>
-                 <p class="text-gray-600 mb-4">Service d'urgence disponible 24h/24 et 7j/7 avec équipe médicale
+                 <p class="text-gray-600 mb-4">Service d'urgence disponible 24h/24 et 7j/7 avec une équipe médicale
                      spécialisée</p>
                  <div class="flex items-center text-blue-500 font-medium">
                      <span>Urgences</span>
@@ -113,7 +113,7 @@
                  </div>
                  <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-red-500 transition-colors">Chirurgie
                  </h3>
-                 <p class="text-gray-600 mb-4">Interventions chirurgicales avec bloc opératoire moderne et équipe
+                 <p class="text-gray-600 mb-4">Interventions chirurgicales avec bloc opératoire moderne et une équipe
                      spécialisée</p>
                  <div class="flex items-center text-red-500 font-medium">
                      <span>Chirurgie</span>
@@ -157,7 +157,7 @@
                  </div>
                  <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-purple-500 transition-colors">
                      Médecine spécialisée</h3>
-                 <p class="text-gray-600 mb-4">Consultations et traitements dans des domaines médicaux spécifiques.</p>
+                 <p class="text-gray-600 mb-4">Consultations et traitements dans les domaines médicaux spécifiques.</p>
                  <div class="flex items-center text-purple-500 font-medium">
                      <span>Spécialités médicales</span>
                      <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>

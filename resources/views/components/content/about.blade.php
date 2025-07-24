@@ -22,8 +22,8 @@
                    </h2>
 
                    <p class="text-lg text-gray-600 leading-relaxed">
-                       Depuis notre création, la Polyclinique Shukrani s'engage à fournir des soins médicaux de qualité
-                       supérieure à tous nos patients. Notre devise "La Santé pour tous" reflète notre engagement envers
+                       Depuis notre création, la Polyclinique Shukrani s'engage à offrir des soins médicaux de qualité
+                       supérieure à tous les patients. Notre devise "La Santé pour tous" reflète notre engagement envers
                        l'accessibilité et l'excellence des soins de santé.
                    </p>
 
@@ -97,7 +97,7 @@
                        <h3 class="text-xl font-bold text-gray-900 mb-4">Notre Vision</h3>
                        <p class="text-gray-600 leading-relaxed mb-4">
                            Être la référence en matière de soins de santé de qualité dans notre région, en alliant
-                           innovation technologique et approche humaine pour le bien-être de tous nos patients.
+                           innovation technologique et approche humaine pour le bien-être de tous les patients.
                        </p>
                        <div class="flex items-center space-x-2 text-medical-teal">
                            <i class="fas fa-certificate"></i>

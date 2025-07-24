@@ -54,7 +54,7 @@
 
                             <p class="text-gray-600 leading-relaxed">
                                 Profitez de nos séances d'échographie avec des équipements de dernière génération et
-                                notre équipe de spécialistes expérimentés.
+                                notre équipe des spécialistes expérimentés.
                             </p>
 
                             <!-- Schedule Info -->

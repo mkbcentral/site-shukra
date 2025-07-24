@@ -85,10 +85,11 @@
                     <!-- Subtitle with Better Typography -->
                     <p class="hero-subtitle text-lg md:text-xl lg:text-2xl max-w-2xl leading-relaxed"
                         style="/* @tweakable hero subtitle text color - dark grey instead of black */ color: rgba(28, 33, 41, 0.95); text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);">
-                        À la <span class="hero-highlight">Polyclinique Shukrani</span>, nous offrons des soins médicaux
+                        À la <span class="hero-highlight">Polyclinique Shukrani</span>, nous offrons les soins médicaux
                         de
                         <span class="hero-highlight">qualité supérieure</span> avec compassion et dévouement.
-                        Notre équipe de professionnels expérimentés est là pour vous accompagner vers une meilleure
+                        Cette équipe est composé des professionnels expérimentés, est là pour vous accompagner vers une
+                        meilleure
                         santé.
                     </p>
                 </div>
